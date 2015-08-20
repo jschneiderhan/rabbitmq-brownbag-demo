@@ -1,0 +1,12 @@
+app:
+  build: .
+  links:
+  - rabbitmq
+  environment:
+  - RABBITMQ_URL=amqp://guest:guest@my-rabbit:5672
+  command: ["ruby", "direct-consumer.rb"]
+rabbitmq:
+  image: rabbitmq:3-management
+  hostname: my-rabbit
+  ports:
+  - "8080:15672"
