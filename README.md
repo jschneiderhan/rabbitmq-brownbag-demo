@@ -8,6 +8,7 @@ Follow these quick and easy steps:
 Prerequisites: You must have docker and docker-compose installed
 
 ```
+
 # Start up RabbitMQ
 $ docker-compose up rabbitmq
 ```
@@ -36,7 +37,6 @@ $ docker-compose run --rm app bash -c "ruby consumer-direct.rb"
 ```
 
 
-```
 ## Fanout exchange example
 
 The Fanout Exchange leaves the Consumers to create the Queue,
@@ -45,6 +45,8 @@ are subscribed. The Consumers create Queues with an empty
 string (so RabbitMQ assigns a random name) and binds to
 the exchange. All Consumers get all messages.
 
+```
+
 # Start up the producer
 $ docker-compose run --rm app bash -c "ruby producer-fanout.rb"
 
@@ -52,7 +54,6 @@ $ docker-compose run --rm app bash -c "ruby producer-fanout.rb"
 $ docker-compose run --rm app bash -c "ruby consumer-fanout.rb"
 ```
 
-```
 ## Topic exchange example
 
 The Topic exchange also leaves the Consumers to create the Queue,
